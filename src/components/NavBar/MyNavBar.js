@@ -1,5 +1,5 @@
 // src/components/Navbar.js
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import {
   Navbar,
   Typography,
@@ -11,9 +11,8 @@ import {
   Avatar,
   Card,
   IconButton,
-  ButtonGroup, 
+  ButtonGroup,
   Collapse,
-  
 } from "@material-tailwind/react";
 import {
   CubeTransparentIcon,
@@ -27,14 +26,15 @@ import {
   PowerIcon,
   RocketLaunchIcon,
   Bars2Icon,
-  FaceFrownIcon, 
+  FaceFrownIcon,
   YoutubeIcon,
 } from "@heroicons/react/24/solid";
 
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 
- 
+import { motion, stagger } from "framer-motion";
+
 // profile menu component
 const profileMenuItems = [
   {
@@ -58,29 +58,27 @@ const profileMenuItems = [
     icon: PowerIcon,
   },
 ];
- 
+
 function ProfileMenu() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
- 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const closeMenu = () => setIsMenuOpen(false);
- 
   return (
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
       <MenuHandler>
-      <div className="flex gap-4">
-      <IconButton size='sm' color="blue" className="rounded-full">
-        <FaFacebookF />
-      </IconButton>
-      <IconButton size='sm' color='red' className="rounded-full">
-      <FaYoutube />
-      </IconButton>
-    </div>
+        <div className="flex gap-4">
+          <IconButton size="sm" color="blue" className="rounded-full">
+            <FaFacebookF />
+          </IconButton>
+          <IconButton size="sm" color="red" className="rounded-full">
+            <FaYoutube />
+          </IconButton>
+        </div>
       </MenuHandler>
-      
     </Menu>
   );
 }
- 
+
 // nav list menu
 // const navListMenuItems = [
 //   {
@@ -99,10 +97,10 @@ function ProfileMenu() {
 //       "A complete set of UI Elements for building faster websites in less time.",
 //   },
 // ];
- 
+
 // function NavListMenu() {
 //   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
- 
+
 //   const renderItems = navListMenuItems.map(({ title, description }) => (
 //     <a href="#" key={title}>
 //       <MenuItem>
@@ -115,7 +113,7 @@ function ProfileMenu() {
 //       </MenuItem>
 //     </a>
 //   ));
- 
+
 //   return (
 //     <React.Fragment>
 //       <Menu allowHover open={isMenuOpen} handler={setIsMenuOpen}>
@@ -157,7 +155,7 @@ function ProfileMenu() {
 //     </React.Fragment>
 //   );
 // }
- 
+
 // nav list component
 const navListItems = [
   {
@@ -173,8 +171,10 @@ const navListItems = [
     label: "Notre Communauté",
   },
 ];
- 
+
 function NavList() {
+  const [cle, setCle] = useState(1);
+
   return (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
       {/* <NavListMenu /> */}
@@ -188,27 +188,34 @@ function NavList() {
           className="font-medium text-blue-gray-500"
         >
           <MenuItem className="flex items-center gap-2 lg:rounded-full uppercase">
-            <span className="text-gray-900"> {label}</span>
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2, staggerChildren: 1 }}
+              className="text-gray-900"
+            >
+              {" "}
+              {label}
+            </motion.span>
           </MenuItem>
         </Typography>
       ))}
     </ul>
   );
 }
- 
-const MyNavbar = () => {
 
+const MyNavbar = () => {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
- 
+
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
- 
+
   React.useEffect(() => {
     window.addEventListener(
       "resize",
-      () => window.innerWidth >= 960 && setIsNavOpen(false), 
+      () => window.innerWidth >= 960 && setIsNavOpen(false)
     );
   }, []);
- 
+
   return (
     <Navbar className="sticky top-0 mx-auto z-50 max-w-full bg-white border-none   rounded-none px-4 py-2 lg:px-8 lg:py-4">
       <div className="relative mx-auto flex items-center justify-between text-blue-gray-900">
@@ -219,7 +226,7 @@ const MyNavbar = () => {
         >
           EGLISE D'ABIDJAN
         </Typography>
-        
+
         <div className="hidden lg:block">
           <NavList />
         </div>
@@ -232,15 +239,14 @@ const MyNavbar = () => {
         >
           <Bars2Icon className="h-6 w-6" />
         </IconButton>
-        
+
         <ProfileMenu />
-        
       </div>
       <Collapse open={isNavOpen} className="overflow-scroll">
         <NavList />
       </Collapse>
     </Navbar>
   );
-}
+};
 
 export default MyNavbar;
