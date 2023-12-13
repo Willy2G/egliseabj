@@ -188,15 +188,16 @@ function NavList() {
           className="font-medium text-blue-gray-500"
         >
           <MenuItem className="flex items-center gap-2 lg:rounded-full uppercase">
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2, staggerChildren: 1 }}
-              className="text-gray-900"
-            >
-              {" "}
-              {label}
-            </motion.span>
+            <motion.div whileHover={{ scale: 1.2 }}>
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2, staggerChildren: 1 }}
+                className="text-gray-900"
+              >
+                {label}
+              </motion.span>
+            </motion.div>
           </MenuItem>
         </Typography>
       ))}
