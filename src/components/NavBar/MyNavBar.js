@@ -15,19 +15,12 @@ import {
   Collapse,
 } from "@material-tailwind/react";
 import {
-  CubeTransparentIcon,
   UserCircleIcon,
-  CodeBracketSquareIcon,
-  Square3Stack3DIcon,
-  ChevronDownIcon,
   Cog6ToothIcon,
   InboxArrowDownIcon,
   LifebuoyIcon,
   PowerIcon,
-  RocketLaunchIcon,
   Bars2Icon,
-  FaceFrownIcon,
-  YoutubeIcon,
 } from "@heroicons/react/24/solid";
 
 import { FaFacebookF } from "react-icons/fa";
@@ -35,33 +28,8 @@ import { FaYoutube } from "react-icons/fa6";
 
 import { motion, stagger } from "framer-motion";
 
-// profile menu component
-const profileMenuItems = [
-  {
-    label: "My Profile",
-    icon: UserCircleIcon,
-  },
-  {
-    label: "Edit Profile",
-    icon: Cog6ToothIcon,
-  },
-  {
-    label: "Inbox",
-    icon: InboxArrowDownIcon,
-  },
-  {
-    label: "Help",
-    icon: LifebuoyIcon,
-  },
-  {
-    label: "Sign Out",
-    icon: PowerIcon,
-  },
-];
-
 function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const closeMenu = () => setIsMenuOpen(false);
   return (
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
@@ -173,7 +141,6 @@ const navListItems = [
 ];
 
 function NavList() {
-  const [cle, setCle] = useState(1);
 
   return (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
@@ -239,6 +206,7 @@ const MyNavbar = () => {
           className="ml-auto mr-2 lg:hidden"
         >
           <Bars2Icon className="h-6 w-6" />
+          
         </IconButton>
 
         <ProfileMenu />

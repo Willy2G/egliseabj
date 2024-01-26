@@ -1,57 +1,214 @@
 import { React } from "react";
+import {
+  Timeline,
+  TimelineItem,
+  TimelineConnector,
+  TimelineHeader,
+  TimelineIcon,
+  TimelineBody,
+  Typography,
+  IconButton,
+} from "@material-tailwind/react";
+
+import { FaFacebookF } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa6";
+import { AiFillAudio } from "react-icons/ai";
+
+import audioIco from "../../assets/mediaco/audio.png";
+import videoIco from "../../assets/mediaco/video.png";
+import enregIco from "../../assets/mediaco/enreg.png";
+import LivreIco from "../../assets/mediaco/livre.png";
 
 const Media = () => {
   const mediaEl = [
     {
-      titre: "Cantiques",
-      contenu: "Accueil",
-      image: "Accueil",
+      titre: "Prédications audio",
+      contenu:
+        "Toutes les prédications de notre frère Ewald Frank, de notre frère William Marrion Branham, de l'Eglise d'Abidjan, ainsi que les cantiques vous sont proposées ici",
+      image: enregIco,
     },
     {
       titre: "Vidéo",
-      contenu: "Accueil",
-      image: "Accueil",
+      contenu:
+        "Nous mettons à votre disposition toutes les prédications vidéos de votre assemblée locale ainsi que celles de notre bien aimé frère Ewald Frank",
+      image: videoIco,
     },
     {
-      titre: "Prédications audio",
-      contenu: "Accueil",
-      image: "Accueil",
+      titre: "Cantiques",
+      contenu:
+        "Ecoutez, téléchargez des cantiques spirituels interpretés par nos bien-aimés chantres de l'Eglise d'Abidjan. s",
+      image: audioIco,
     },
     {
       titre: "Livres et brochures",
-      contenu: "Accueil",
-      image: "Accueil",
+      contenu:
+        "Trouvez ici les transcriptions des prédications de notre Fr William Branham, en brochures ainsi que les livres et autres écrits de notre Fr Ewald Frank",
+      image: LivreIco,
+    },
+  ];
+
+  const ecouteReunion = [
+    {
+      jourR: "Mercredi",
+      heureR: "A partir de 10H",
+      modeSuivi: [
+        {
+          icon: AiFillAudio,
+          libelle: "Suivre en Audio",
+          lien: "#",
+          couleur: "amber",
+        },
+        {
+          icon: FaFacebookF,
+          libelle: "Direct sur Facebook",
+          lien: "#",
+          couleur: "blue",
+        },
+        {
+          icon: FaYoutube,
+          libelle: "Direct sur Youtubre",
+          lien: "#",
+          couleur: "red",
+        },
+      ],
+    },
+    {
+      jourR: "Samedi",
+      heureR: "A partir de 10H",
+      modeSuivi: [
+        {
+          icon: AiFillAudio,
+          libelle: "Suivre en Audio",
+          lien: "#",
+          couleur: "amber",
+        },
+        {
+          icon: FaFacebookF,
+          libelle: "Direct sur Facebook",
+          lien: "#",
+          couleur: "blue",
+        },
+        {
+          icon: FaYoutube,
+          libelle: "Direct sur Youtubre",
+          lien: "#",
+          couleur: "red",
+        },
+      ],
+    },
+    {
+      jourR: "Dimanche",
+      heureR: "A partir de 10H",
+      modeSuivi: [
+        {
+          icon: AiFillAudio,
+          libelle: "Suivre en Audio",
+          lien: "#",
+          couleur: "amber",
+        },
+        {
+          icon: FaFacebookF,
+          libelle: "Direct sur Facebook",
+          lien: "#",
+          couleur: "blue",
+        },
+        {
+          icon: FaYoutube,
+          libelle: "Direct sur Youtubre",
+          lien: "#",
+          couleur: "red",
+        },
+      ],
     },
   ];
   return (
-    <section className="lg:py-16 py-4">
-      <h2 class="text-black pb-8 font-bold lg:text-4xl text-3xl uppercase relative h-auto w-full pb-1 text-center ">
-        Médias <span class="text-red-500">.</span>
-      </h2>
-      <div class="z-50 p-2 grid grid-flow-row gap-4 mx-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
-        {mediaEl.map(({ titre, contenu, image }, key) => (
-          <div
-            key={key}
-            class="bg-gradient-to-b from-white/60 to-white/30 text-[#1c0708] backdrop-blur-[.5em] border-[1px] border-solid border-white border-opacity-10 rounded-2xl shadow-black/50  overflow-hidden shadow-2xl hover:-translate-y-1 hover:shadow-black/75 hover:backdrop-blur-[1em] transition"
-          >
-            <div class="grid place-items-center text-center gap-1">
-              <div class="col-span-4 p-4">
-                <h2 class="font-bold text-2xl mb-4">{titre}</h2>
-                <p class="text-sm text-[#1c0708]/60">
-                  Vitae ducimus harum earum ratione autem esse ea!
+    <>
+      <section className="lg:py-16 py-4">
+        <h2 className="text-black pb-8 font-bold lg:text-4xl text-3xl uppercase relative h-auto w-full pb-1 text-center ">
+          Médias <span className="text-red-500">.</span>
+        </h2>
+        <div className="z-50 p-2 grid grid-flow-row gap-4 mx-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
+          {mediaEl.map(({ titre, contenu, image }, key) => (
+            <div
+              key={key}
+              className="bg-gradient-to-b from-white/60 to-white/30 text-[#1c0708] backdrop-blur-[.5em] border-[1px] border-solid border-white border-opacity-10 rounded-2xl shadow-black/50  overflow-hidden shadow-2xl hover:-translate-y-1 hover:shadow-black/75 hover:backdrop-blur-[1em] transition"
+            >
+              <div className="grid place-items-center text-center gap-1">
+                <div className="col-span-4 p-4">
+                  <img src={image} alt={image} className="w-16 mx-auto mb-2" />
+                  <h2 className="font-bold text-2xl mb-4">{titre}</h2>
+                  <p className="text-md text-[#1c0708]/60 font-bold">
+                    {contenu}
+                  </p>
+                  <a
+                    href=""
+                    className="mt-6 py-3 px-2 inline-flex bg-brown-600 hover:bg-brown-900 transition-colors text-gray-200 font-bold rounded-sm text-sm"
+                  >
+                    Consulter
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section>
+        <div className="bg-[#fed7aa] text-black py-8">
+          <h2 className="text-black pt-6 font-bold lg:text-4xl text-3xl uppercase relative h-auto w-full pb-1 text-center ">
+            NOS RÉUNIONS EN DIRECT <span className="text-red-500">.</span>
+          </h2>
+
+          <div class="flex justify-center items-center h-screen w-10/12 mx-auto gap-10">
+            <div class="w-1/4 mx-auto ">
+              <div class="text-4xl font-bold mb-5">
+                <h2>Le Programmes des réunions</h2>
+              </div>
+              <div class="text-justify text-sm">
+                <p>
+                  Les réunions se tiennent en français. Pour les personnes ne
+                  pouvant comprendre cette langue, une assistance de traduction
+                  peut leur etre accordés après qu'elles se soient signalées
+                  auprès des diacres
                 </p>
-                <a
-                  href="#"
-                  class="mt-6 py-3 px-2 inline-flex bg-brown-600 hover:bg-brown-900 transition-colors text-gray-200 font-bold rounded-full text-sm"
-                >
-                  En savoir plus
-                </a>
+              </div>
+              <div class="flex justify-between items-center text-center mt-8 w-2/3 mx-auto">
+                <div class="cursor-pointer">
+                  <div class="w-24 h-24 bg-[#EF5357] bg-gradient-to-b rounded-full">
+                    <img alt="Logo Krefeld" class="rounded-full p-2" />
+                  </div>
+                  <div class="text-white rounded-full bg-[#EF5357] bg-gradient-to-b flex justify-center items-center h-8 w-14 mx-auto relative -top-6">
+                    <svg
+                      class="fill-white w-2 mr-1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z" />
+                    </svg>
+                    <span> Live</span>
+                  </div>
+                  <div class="font-bold -mt-5"></div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-[#FF5E64] bg-gradient-to-b rounded-xl flex flex-col items-center p-14 shadow-2xl">
+              <div class="flex text-white justify-between gap-10 items-center text-center">
+                <div>
+                  <div class="rounded-full bg-[#BA0D11] text-lg p-3 px-10"></div>
+                  <div class="my-6 text-xl font-bold"></div>
+                  <div class="w-10 mx-auto bg-[#A2272A] h-1 rounded-full items-center mb-6"></div>
+                  <div class="font-bold text-xl"></div>
+                </div>
+              </div>
+              <div class="w-11/12 mx-auto bg-[#A2272A] h-1 rounded-full items-center my-6"></div>
+              <div class="text-[0.847rem]">
+                Les premiers samedi et dimanche du mois sont réservés au suivi{" "}
+                <span class="text-white">en direct du culte de Krefeld.</span>
               </div>
             </div>
           </div>
-        ))}
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 };
 
