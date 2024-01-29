@@ -72,7 +72,9 @@ const VideoCarousel = () => {
           initial={{ x: -400 }}
           animate={{ x: 0 }}
           transition={{ duration: 3 }}
-          className="text-white font-bold lg:text-6xl text-md lg:leading-[3.8rem]	 text-center"
+          className="text-white font-bold lg:text-6xl sm:text-3xl text-md font-gowun
+          
+          lg:leading-[4.8rem]	text-center"
         >
           Et voici, Je viens bientôt Heureux celui qui garde les paroles de la
           prophétie de ce Livre !

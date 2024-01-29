@@ -10,7 +10,7 @@ const About = () => {
     <>
       <section className="flex items-center lg:py-16 py-4 bg-stone-100  font-poppins dark:bg-gray-800 z-0">
         <div className="justify-center flex-1 w-full lg:mx-16 py-4 mx-auto lg:py-6 md:px-6">
-          <div className="flex flex-wrap ">
+          <div className="flex flex-wrap">
             <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0">
               <div className="relative">
                 <img
@@ -22,7 +22,7 @@ const About = () => {
               </div>
             </div>
             <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0 ">
-              <h2 className="text-black font-bold text-4xl uppercase relative h-auto w-full pb-1 text-center xl:text-left ">
+              <h2 className="text-black  font-bold text-4xl uppercase relative h-auto w-full pb-1 text-center xl:text-left ">
                 A propos <span className="text-red-500">.</span>
               </h2>
               <Typography color="gray" className="mb-8 mt-3 font-normal">

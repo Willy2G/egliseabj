@@ -128,20 +128,23 @@ function ProfileMenu() {
 const navListItems = [
   {
     label: "Accueil",
+    lien: "/Accueil",
   },
   {
     label: "A propos",
+    lien: "/about",
   },
   {
     label: "Media",
+    lien: "/media",
   },
   {
     label: "Notre Communauté",
+    lien: "/communauté",
   },
 ];
 
 function NavList() {
-
   return (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
       {/* <NavListMenu /> */}
@@ -152,7 +155,7 @@ function NavList() {
           href="#"
           variant="small"
           color="gray"
-          className="font-medium text-blue-gray-500"
+          className="font-bold text-blue-gray-500"
         >
           <MenuItem className="flex items-center gap-2 lg:rounded-full uppercase">
             <motion.div whileHover={{ scale: 1.2 }}>
@@ -206,7 +209,6 @@ const MyNavbar = () => {
           className="ml-auto mr-2 lg:hidden"
         >
           <Bars2Icon className="h-6 w-6" />
-          
         </IconButton>
 
         <ProfileMenu />
