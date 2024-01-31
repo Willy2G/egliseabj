@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/egliseabj/static/css/main.1ae9a31f.css",
+    "main.js": "/egliseabj/static/js/main.43e705ab.js",
+    "static/media/bg2.mp4": "/egliseabj/static/media/bg2.62540eabcff7b6a06c78.mp4",
+    "static/media/bg3.mp4": "/egliseabj/static/media/bg3.a41ae8b9c72b7644c3f8.mp4",
+    "static/media/bg1.mp4": "/egliseabj/static/media/bg1.64b31ae5987041ec1d2c.mp4",
+    "static/media/assemblee.jpg": "/egliseabj/static/media/assemblee.c743e00c43a3235df73d.jpg",
+    "static/media/video.png": "/egliseabj/static/media/video.52535072f84ae498ac6f.png",
+    "static/media/enreg.png": "/egliseabj/static/media/enreg.4736ac9eb2b2669b0002.png",
+    "static/media/audio.png": "/egliseabj/static/media/audio.8e18b40c87877f3712d1.png",
+    "static/media/slick.svg": "/egliseabj/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/egliseabj/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/egliseabj/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/egliseabj/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/egliseabj/index.html",
+    "main.1ae9a31f.css.map": "/egliseabj/static/css/main.1ae9a31f.css.map",
+    "main.43e705ab.js.map": "/egliseabj/static/js/main.43e705ab.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ae9a31f.css",
+    "static/js/main.43e705ab.js"
+  ]
+}
