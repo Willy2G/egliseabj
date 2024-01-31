@@ -213,17 +213,17 @@ const Media = () => {
       </section>
 
       <section className="lg:py-16 py-4 bg-[#fed7aa] text-black">
-        <h2 className="text-black font-bold lg:text-4xl text-3xl uppercase relative h-auto w-full pb-1 text-center ">
+        <h2 className="text-black font-bold lg:text-4xl text-2xl uppercase relative h-auto w-full pb-1 text-center ">
           NOS RÉUNIONS EN DIRECT <span className="text-red-500">.</span>
         </h2>
         <div className="justify-center flex-1 w-full py-4 mx-auto lg:py-6 md:px-6">
           <div className="flex flex-wrap">
             <div className="w-full mx-auto px-4 mb-10 lg:w-1/2 md:mb-0">
-              <div class="text-3xl font-bold mb-5">
+              <div class="md:text-2xl text-xl font-bold mb-5">
                 <h2 className="text-center">Le Programmes des réunions</h2>
               </div>
               <div class="text-center">
-                <p className="w-3/5 mx-auto text-lg">
+                <p className="md:w-3/5 px-4 mx-auto text-lg">
                   Les réunions se tiennent en français. Pour les personnes ne
                   pouvant comprendre cette langue, une assistance de traduction
                   peut leur etre accordés après qu'elles se soient signalées
@@ -252,7 +252,7 @@ const Media = () => {
             <div className="w-full mx-auto px-4 mb-10 lg:w-1/2 md:mb-0">
               <div className="relative">
                 <div class="bg-[#ffffff] bg-gradient-to-b rounded-xl flex flex-col items-center p-4 shadow-2xl">
-                  <div class="flex w-3/4 justify-between items-center text-center">
+                  <div class="md:flex md:w-3/4 w-full justify-between items-center text-center">
                     {ecouteReunion.map((data, key) => (
                       <div>
                         <div
