@@ -75,7 +75,7 @@ const Media = () => {
     },
     {
       jourR: "Samedi",
-      heureR: "A partir de 10H",
+      heureR: "A partir de 15H",
       typeR: "Prière et exhortation",
       modeSuivi: [
         {
@@ -100,7 +100,7 @@ const Media = () => {
     },
     {
       jourR: "Dimanche",
-      heureR: "A partir de 10H",
+      heureR: "A partir de 9H",
       typeR: "Culte",
       modeSuivi: [
         {
