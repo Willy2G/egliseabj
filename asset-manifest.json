@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/egliseabj/static/css/main.020b1750.css",
-    "main.js": "/egliseabj/static/js/main.0e699217.js",
+    "main.js": "/egliseabj/static/js/main.2fe8d8a7.js",
     "static/media/bg2.mp4": "/egliseabj/static/media/bg2.62540eabcff7b6a06c78.mp4",
     "static/media/bg3.mp4": "/egliseabj/static/media/bg3.a41ae8b9c72b7644c3f8.mp4",
     "static/media/bg1.mp4": "/egliseabj/static/media/bg1.64b31ae5987041ec1d2c.mp4",
@@ -15,10 +15,10 @@
     "static/media/slick.woff": "/egliseabj/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/egliseabj/index.html",
     "main.020b1750.css.map": "/egliseabj/static/css/main.020b1750.css.map",
-    "main.0e699217.js.map": "/egliseabj/static/js/main.0e699217.js.map"
+    "main.2fe8d8a7.js.map": "/egliseabj/static/js/main.2fe8d8a7.js.map"
   },
   "entrypoints": [
     "static/css/main.020b1750.css",
-    "static/js/main.0e699217.js"
+    "static/js/main.2fe8d8a7.js"
   ]
 }
