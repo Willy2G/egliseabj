@@ -36,7 +36,7 @@ const Media = () => {
     {
       titre: "Cantiques",
       contenu:
-        "Ecoutez, téléchargez des cantiques spirituels interpretés par nos bien-aimés chantres de l'Eglise d'Abidjan. s",
+        "Ecoutez, téléchargez des cantiques spirituels interpretés par nos bien-aimés chantres de l'Eglise d'Abidjan.",
       image: audioIco,
     },
     {
@@ -51,6 +51,7 @@ const Media = () => {
     {
       jourR: "Mercredi",
       heureR: "A partir de 10H",
+      typeR: "Prière et exhortation",
       modeSuivi: [
         {
           icon: AiFillAudio,
@@ -75,6 +76,7 @@ const Media = () => {
     {
       jourR: "Samedi",
       heureR: "A partir de 10H",
+      typeR: "Prière et exhortation",
       modeSuivi: [
         {
           icon: AiFillAudio,
@@ -99,6 +101,7 @@ const Media = () => {
     {
       jourR: "Dimanche",
       heureR: "A partir de 10H",
+      typeR: "Culte",
       modeSuivi: [
         {
           icon: AiFillAudio,
@@ -140,7 +143,10 @@ const Media = () => {
                   <p className="text-md text-[#1c0708]/60 font-bold">
                     {contenu}
                   </p>
-                  <a className="mt-6 py-3 px-2 inline-flex bg-brown-600 hover:bg-brown-900 transition-colors text-gray-200 font-bold rounded-sm text-sm">
+                  <a
+                    href="#"
+                    className="mt-6 py-3 px-2 inline-flex bg-[#8d4d03] hover:bg-[#c36c08] transition-colors text-gray-200 font-bold rounded-sm text-sm"
+                  >
                     Consulter
                   </a>
                 </div>
@@ -245,14 +251,21 @@ const Media = () => {
             </div>
             <div className="w-full mx-auto px-4 mb-10 lg:w-1/2 md:mb-0">
               <div className="relative">
-                <div class="bg-[#FF5E64] bg-gradient-to-b rounded-xl flex flex-col items-center p-4 shadow-2xl">
-                  <div class="flex text-white justify-between gap-10 items-center text-center">
-                    <div>
-                      <div class="rounded-full bg-[#BA0D11] text-lg p-3 px-10"></div>
-                      <div class="my-6 text-xl font-bold"></div>
-                      <div class="w-10 mx-auto bg-[#A2272A] h-1 rounded-full items-center mb-6"></div>
-                      <div class="font-bold text-xl"></div>
-                    </div>
+                <div class="bg-[#ffffff] bg-gradient-to-b rounded-xl flex flex-col items-center p-4 shadow-2xl">
+                  <div class="flex w-3/4 justify-between items-center text-center">
+                    {ecouteReunion.map((data, key) => (
+                      <div>
+                        <div
+                          class="rounded-full bg-[#c36c08] text-lg p-3 px-10 text-white"
+                          key={key}
+                        >
+                          {data.jourR}
+                        </div>
+                        <div class="my-6 text-xl font-bold">{data.heureR}</div>
+                        <div class="w-10 mx-auto bg-[#A2272A] h-1 rounded-full items-center mb-6"></div>
+                        <div class="font-bold text-xl">{data.typeR}</div>
+                      </div>
+                    ))}
                   </div>
                   <div class="w-11/12 mx-auto bg-[#A2272A] h-1 rounded-full items-center my-6"></div>
                   <div class="text-[0.847rem]">

@@ -48,7 +48,7 @@ const About = () => {
 
               <a
                 href="#"
-                className="px-4 py-3 text-white transition-all transform bg-brown-600 rounded-[80px] hover:bg-brown-900 dark:hover:text-gray-100 dark:text-gray-100 "
+                className="px-4 py-3 uppercase text-white transition-all transform bg-[#8d4d03] rounded-[80px] hover:bg-[#c36c08] dark:hover:text-gray-100 dark:text-gray-100 "
               >
                 En savoir plus
               </a>
