@@ -11,8 +11,8 @@ function App() {
       <div className="relative bg-white">
         <MyNavbar />
         <VideoCarousel />
-        <About />
         <Media />
+        <About />
       </div>
     </>
   );

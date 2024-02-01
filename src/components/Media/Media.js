@@ -1,4 +1,6 @@
-import { React } from "react";
+import { React, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   Timeline,
   TimelineItem,
@@ -124,8 +126,96 @@ const Media = () => {
       ],
     },
   ];
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <>
+      <section className="lg:py-16 py-4 bg-[#fed7aa] text-black">
+        <h2
+          data-aos="zoom-in-down"
+          data-aos-duration="500"
+          className="text-black font-bold lg:text-4xl text-2xl uppercase relative h-auto w-full pb-1 text-center "
+        >
+          NOS RÉUNIONS EN DIRECT <span className="text-red-500">.</span>
+        </h2>
+        <div className="justify-center flex-1 w-full py-4 mx-auto lg:py-6 md:px-6 ">
+          <div className="flex flex-wrap">
+            <div
+              className="w-full mx-auto px-4 mb-10 lg:w-1/2 md:mb-0"
+              data-aos="fade-right"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+            >
+              <div class="md:text-2xl text-xl font-bold mb-5">
+                <h2 className="text-center">Le Programmes des réunions</h2>
+              </div>
+              <div class="text-center">
+                <p className="md:w-3/5 px-4 mx-auto text-lg">
+                  Les réunions se tiennent en français. Pour les personnes ne
+                  pouvant comprendre cette langue, une assistance de traduction
+                  peut leur etre accordés après qu'elles se soient signalées
+                  auprès des diacres.
+                </p>
+              </div>
+              <div class="flex justify-center items-center text-center mt-8 mx-auto">
+                <div class="cursor-pointer items-center flex-col flex justify-center hidden">
+                  <div class="w-24 h-24 bg-[#ffffff] bg-gradient-to-b rounded-full items-center relative flex justify-center">
+                    <img src={enregIco} alt={enregIco} className="w-12" />
+                  </div>
+                  <div class="text-white rounded-full bg-[#EF5357] bg-gradient-to-b flex justify-center items-center h-8 w-14 mx-auto relative -top-6">
+                    <svg
+                      class="fill-white w-2 mr-1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z" />
+                    </svg>
+                    <span>Live</span>
+                  </div>
+                  <div class="font-bold -mt-5">Eglise d'Abidjan</div>
+                </div>
+              </div>
+            </div>
+            <div
+              className="w-full mx-auto px-4 mb-10 lg:w-1/2 md:mb-0"
+              data-aos="fade-left"
+              data-aos-offset="300"
+              data-aos-easing="ease-in-sine"
+            >
+              <div className="relative">
+                <div class="bg-[#ffffff] bg-gradient-to-b rounded-xl flex flex-col items-center p-4 shadow-2xl">
+                  <div class="md:flex md:w-3/4 w-full justify-between items-center text-center">
+                    {ecouteReunion.map((data, key) => (
+                      <div>
+                        <div
+                          class="rounded-full font-bold  bg-[#c36c08] text-lg p-3 px-10 text-white"
+                          key={key}
+                        >
+                          {data.jourR}
+                        </div>
+                        <div class="my-6 text-xl">{data.heureR}</div>
+                        <div class="w-10 mx-auto bg-[#A2272A] h-1 rounded-full items-center mb-6"></div>
+                        <div class="text-xl">{data.typeR}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div class="w-11/12 mx-auto bg-[#A2272A] h-1 rounded-full items-center my-6"></div>
+                  <div class="text-[0.847rem] text-bold ">
+                    Les premiers samedi et dimanche du mois sont réservés au
+                    suivi{" "}
+                    <span className="text-[#c36c08]">
+                      en direct du culte de Krefeld.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="lg:py-16 py-4">
         <h2 className="text-black pb-8 font-bold lg:text-4xl text-3xl uppercase relative h-auto w-full pb-1 text-center ">
           Médias <span className="text-red-500">.</span>
@@ -135,6 +225,12 @@ const Media = () => {
             <div
               key={key}
               className="bg-gradient-to-b from-white/60 to-white/30 text-[#1c0708] backdrop-blur-[.5em] border-[1px] border-solid border-white border-opacity-10 rounded-2xl shadow-black/50  overflow-hidden shadow-2xl hover:-translate-y-1 hover:shadow-black/75 hover:backdrop-blur-[1em] transition"
+              data-aos="zoom-in"
+              data-aos-offset="200"
+              data-aos-delay="50"
+              data-aos-duration="1000"
+              data-aos-mirror="true"
+              data-aos-once="false"
             >
               <div className="grid place-items-center text-center gap-1">
                 <div className="col-span-4 p-4">
@@ -206,76 +302,6 @@ const Media = () => {
               <div class="text-[0.847rem]">
                 Les premiers samedi et dimanche du mois sont réservés au suivi{" "}
                 <span class="text-white">en direct du culte de Krefeld.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="lg:py-16 py-4 bg-[#fed7aa] text-black">
-        <h2 className="text-black font-bold lg:text-4xl text-2xl uppercase relative h-auto w-full pb-1 text-center ">
-          NOS RÉUNIONS EN DIRECT <span className="text-red-500">.</span>
-        </h2>
-        <div className="justify-center flex-1 w-full py-4 mx-auto lg:py-6 md:px-6">
-          <div className="flex flex-wrap">
-            <div className="w-full mx-auto px-4 mb-10 lg:w-1/2 md:mb-0">
-              <div class="md:text-2xl text-xl font-bold mb-5">
-                <h2 className="text-center">Le Programmes des réunions</h2>
-              </div>
-              <div class="text-center">
-                <p className="md:w-3/5 px-4 mx-auto text-lg">
-                  Les réunions se tiennent en français. Pour les personnes ne
-                  pouvant comprendre cette langue, une assistance de traduction
-                  peut leur etre accordés après qu'elles se soient signalées
-                  auprès des diacres.
-                </p>
-              </div>
-              <div class="flex justify-center items-center text-center mt-8 mx-auto">
-                <div class="cursor-pointer items-center flex-col flex justify-center hidden">
-                  <div class="w-24 h-24 bg-[#ffffff] bg-gradient-to-b rounded-full items-center relative flex justify-center">
-                    <img src={enregIco} alt={enregIco} className="w-12" />
-                  </div>
-                  <div class="text-white rounded-full bg-[#EF5357] bg-gradient-to-b flex justify-center items-center h-8 w-14 mx-auto relative -top-6">
-                    <svg
-                      class="fill-white w-2 mr-1"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 512 512"
-                    >
-                      <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z" />
-                    </svg>
-                    <span> Live</span>
-                  </div>
-                  <div class="font-bold -mt-5">Eglise d'Abidjan</div>
-                </div>
-              </div>
-            </div>
-            <div className="w-full mx-auto px-4 mb-10 lg:w-1/2 md:mb-0">
-              <div className="relative">
-                <div class="bg-[#ffffff] bg-gradient-to-b rounded-xl flex flex-col items-center p-4 shadow-2xl">
-                  <div class="md:flex md:w-3/4 w-full justify-between items-center text-center">
-                    {ecouteReunion.map((data, key) => (
-                      <div>
-                        <div
-                          class="rounded-full bg-[#c36c08] text-lg p-3 px-10 text-white"
-                          key={key}
-                        >
-                          {data.jourR}
-                        </div>
-                        <div class="my-6 text-xl font-bold">{data.heureR}</div>
-                        <div class="w-10 mx-auto bg-[#A2272A] h-1 rounded-full items-center mb-6"></div>
-                        <div class="font-bold text-xl">{data.typeR}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div class="w-11/12 mx-auto bg-[#A2272A] h-1 rounded-full items-center my-6"></div>
-                  <div class="text-[0.847rem]">
-                    Les premiers samedi et dimanche du mois sont réservés au
-                    suivi{" "}
-                    <span class="text-white">
-                      en direct du culte de Krefeld.
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
