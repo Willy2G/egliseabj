@@ -9,31 +9,6 @@ import video1 from "../assets/bg/bg1.mp4";
 import video2 from "../assets/bg/bg2.mp4";
 import video3 from "../assets/bg/bg3.mp4";
 
-// const VideoCarousel = () => {
-
-//   const settings = {
-//     dots: true,
-//     infinite: true,
-//     speed: 500,
-//     slidesToShow: 1,
-//     slidesToScroll: 1,
-//   };
-
-//   return (
-//     <div classNameName="relative z-0">
-//       <Slider {...settings}>
-//         {videos.map((video, index) => (
-//           <div key={index}>
-//             <video autoPlay muted loop classNameName="min-w-full min-h-full object-cover">
-//               <source src={video} type="video/mp4" />
-//             </video>
-//           </div>
-//         ))}
-//       </Slider>
-//     </div>
-//   );
-// };
-
 const VideoCarousel = () => {
   const videos = [video1, video2, video3];
 
@@ -68,9 +43,14 @@ const VideoCarousel = () => {
       </Slider>
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <motion.p
-          initial={{ x: -400 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 3 }}
+                
+          initial={{ scale: 0 }}
+          animate={{ rotate: 0, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 20,
+            damping: 15,
+          }}
           className="text-white font-bold lg:text-6xl sm:text-3xl text-md font-gowun
           
           lg:leading-[4.8rem]	text-center"
