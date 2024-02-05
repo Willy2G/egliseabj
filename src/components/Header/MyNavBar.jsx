@@ -1,32 +1,23 @@
 // src/components/Navbar.js
 import React, { useState } from "react";
+import { NavLink, Link } from 'react-router-dom';
 import {
   Navbar,
   Typography,
-  Button,
   Menu,
   MenuHandler,
-  MenuList,
   MenuItem,
-  Avatar,
-  Card,
   IconButton,
-  ButtonGroup,
   Collapse,
 } from "@material-tailwind/react";
 import {
-  UserCircleIcon,
-  Cog6ToothIcon,
-  InboxArrowDownIcon,
-  LifebuoyIcon,
-  PowerIcon,
-  Bars2Icon,
+  Bars2Icon
 } from "@heroicons/react/24/solid";
 
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 
-import { motion, stagger } from "framer-motion";
+import { motion } from "framer-motion";
 
 function ProfileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -128,7 +119,7 @@ function ProfileMenu() {
 const navListItems = [
   {
     label: "Accueil",
-    lien: "/Accueil",
+    lien: "/home",
   },
   {
     label: "A propos",
@@ -140,7 +131,7 @@ const navListItems = [
   },
   {
     label: "Notre Communauté",
-    lien: "/communauté",
+    lien: "/communaute",
   },
 ];
 
@@ -148,15 +139,16 @@ function NavList() {
   return (
     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center">
       {/* <NavListMenu /> */}
-      {navListItems.map(({ label, icon }, key) => (
-        <Typography
-          key={label}
-          as="a"
-          href="#"
+      {navListItems.map(({ label, lien }, key) => (
+
+       <Typography
+          key={key}
+          as="li"
           variant="small"
           color="gray"
           className="font-bold text-blue-gray-500"
         >
+          <NavLink to={lien}>
           <MenuItem className="flex items-center gap-2 lg:rounded-full uppercase">
             <motion.div whileHover={{ scale: 1.2 }}>
               <motion.span
@@ -169,6 +161,7 @@ function NavList() {
               </motion.span>
             </motion.div>
           </MenuItem>
+          </NavLink>
         </Typography>
       ))}
     </ul>

@@ -1,9 +1,8 @@
 import React from "react";
 import { Typography } from "@material-tailwind/react";
+import assemblee from "../assets/images/assemblee.jpg";
 
-import { motion } from "framer-motion";
-
-import assemblee from "../../assets/images/assemblee.jpg";
+import { NavLink, Link } from 'react-router-dom';
 
 const About = () => {
   return (
@@ -46,12 +45,12 @@ const About = () => {
                 vous avez reçu gratuitement, donnez-le gratuitement.
               </Typography>
 
-              <a
-                href="#"
+              <Link to={'/home'}
+               
                 className="px-4 py-3 uppercase text-white transition-all transform bg-[#8d4d03] rounded-[80px] hover:bg-[#c36c08] dark:hover:text-gray-100 dark:text-gray-100 "
               >
                 En savoir plus
-              </a>
+              </Link>
             </div>
           </div>
         </div>

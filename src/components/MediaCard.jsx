@@ -1,25 +1,15 @@
 import { React, useEffect } from "react";
+import { NavLink, Link } from 'react-router-dom';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import {
-  Timeline,
-  TimelineItem,
-  TimelineConnector,
-  TimelineHeader,
-  TimelineIcon,
-  TimelineBody,
-  Typography,
-  IconButton,
-} from "@material-tailwind/react";
-
 import { FaFacebookF } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa6";
 import { AiFillAudio } from "react-icons/ai";
 
-import audioIco from "../../assets/mediaco/audio.png";
-import videoIco from "../../assets/mediaco/video.png";
-import enregIco from "../../assets/mediaco/enreg.png";
-import LivreIco from "../../assets/mediaco/livre.png";
+import audioIco from "../assets/mediaco/audio.png";
+import videoIco from "../assets/mediaco/video.png";
+import enregIco from "../assets/mediaco/enreg.png";
+import LivreIco from "../assets/mediaco/livre.png";
 
 const Media = () => {
   const mediaEl = [
@@ -133,7 +123,7 @@ const Media = () => {
 
   return (
     <>
-      <section className="lg:py-16 py-4 bg-[#fed7aa] text-black">
+      <section className="lg:py-16 py-8 bg-[#fed7aa] text-black">
         <h2
           data-aos="zoom-in-down"
           data-aos-duration="500"
@@ -239,12 +229,11 @@ const Media = () => {
                   <p className="text-md text-[#1c0708]/60 font-bold">
                     {contenu}
                   </p>
-                  <a
-                    href="#"
+                   <Link to={'/home'}
                     className="mt-6 py-3 px-2 inline-flex bg-[#8d4d03] hover:bg-[#c36c08] transition-colors text-gray-200 font-bold rounded-sm text-sm"
                   >
                     Consulter
-                  </a>
+                   </Link>
                 </div>
               </div>
             </div>

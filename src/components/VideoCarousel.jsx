@@ -3,12 +3,11 @@ import Slider from "react-slick";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-import video1 from "../../assets/bg/bg1.mp4";
-import video2 from "../../assets/bg/bg2.mp4";
-import video3 from "../../assets/bg/bg3.mp4";
+
+
+import video1 from "../assets/bg/bg1.mp4";
+import video2 from "../assets/bg/bg2.mp4";
+import video3 from "../assets/bg/bg3.mp4";
 
 // const VideoCarousel = () => {
 
